@@ -13,7 +13,6 @@ export const GifGrid = ({ category }: GifGridProps) => {
 
     const handleClose = (_event?: SyntheticEvent | Event, reason?: string) => {
         if (reason === 'clickaway') {
-          console.log("click wary");
           return;
         }
         setIsNoData(false);

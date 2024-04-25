@@ -19,7 +19,6 @@ export const AddCategory = ({ onAddCategory }: AddCategoryProps) => {
         evt.preventDefault()
         if (inputCategory.trim().length > 2) {
             onAddCategory(inputCategory.toLocaleLowerCase());
-            console.log("enviando", inputCategory);
             setInputCategory("")
         }
     }

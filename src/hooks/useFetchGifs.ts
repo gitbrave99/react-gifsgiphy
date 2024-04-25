@@ -21,7 +21,6 @@ export const useFetchGifs = (category: string) => {
         
     }
     useEffect(() => {
-        console.log("llamdno");
         getImages();
     }, [])
     return {
