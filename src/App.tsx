@@ -1,26 +1,23 @@
 
-import { SyntheticEvent, useEffect, useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import './App.css'
 import { MaterialUIModule } from './materialui/MaterialUIModule'
 import { AddCategory, GifGrid } from './components';
 
-
-
 function App() {
-  const { Container, Grid, Alert, Snackbar, Slide } = MaterialUIModule()
+  const { Container, Grid, Alert, Snackbar } = MaterialUIModule()
   const [categories, setCategories] = useState(["saitama"])
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState<string>("");
 
   const onAddCategory = (category: string) => {
     if (categories.includes(category)) {
-      setMessage("the word had already been searched for")
+      setMessage("The word had already been searched for")
       setOpen(true);
       return
     }
     setCategories([category, ...categories]);
   }
-
 
   const handleClose = (_event?: SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
@@ -29,15 +26,6 @@ function App() {
     }
     setOpen(false);
   };
-  const [checked, setChecked] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setChecked(true)
-    }, 1200);
-  }, [])
-  
-
 
   return (
     <>
